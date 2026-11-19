@@ -1,0 +1,8 @@
+Buildroot version: 2024.02.13
+Buildroot commit: e687e381
+Target architecture: AArch64
+Qt series in Buildroot: 6.4
+Configuration: configs/lifttrack_rpi4_defconfig
+Enabled in active config: Qt 6, linuxfb, Qt Widgets, Qt Network, Qt SQL/SQLite, Qt SerialPort, Mosquitto broker, SQLite
+Root filesystem overlay: empty in active config
+Autostart script S99lifttrack: not found in workspace at review time

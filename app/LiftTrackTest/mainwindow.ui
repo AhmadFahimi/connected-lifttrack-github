@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Connected LiftTrack - Industrial Central Panel</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow {
+    background-color: #121417;
+}
+
+QGroupBox {
+    color: #00e5ff;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #2a3342;
+    border-radius: 12px;
+    margin-top: 20px;
+    padding-top: 25px;
+    background-color: #1a202c;
+}
+
+QLabel {
+    color: #e2e8f0;
+    font-size: 16px;
+}
+
+QPushButton {
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid #3b82f6;
+    padding: 15px;
+    min-height: 50px;
+}
+
+QPushButton:pressed {
+    background-color: #1d4ed8;
+}
+
+QPushButton#btnEmergency {
+    background-color: #dc2626;
+    border: 1px solid #ef4444;
+}
+
+QPushButton#btnEmergency:pressed {
+    background-color: #991b1b;
+}
+
+QTableWidget {
+    background-color: #1e2530;
+    color: #f1f5f9;
+    gridline-color: #334155;
+    font-size: 16px;
+    border-radius: 8px;
+}
+QHeaderView::section {
+    background-color: #0f172a;
+    color: #38bdf8;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #334155;
+}
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainVLayout">
+    <property name="spacing">
+     <number>15</number>
+    </property>
+    <property name="leftMargin">
+     <number>20</number>
+    </property>
+    <property name="topMargin">
+     <number>20</number>
+    </property>
+    <property name="rightMargin">
+     <number>20</number>
+    </property>
+    <property name="bottomMargin">
+     <number>20</number>
+    </property>
+
+    <!-- Header Banner -->
+    <item>
+     <widget class="QFrame" name="headerFrame">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>70</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1e293b; border-radius: 10px; border-left: 6px solid #00e5ff;</string>
+      </property>
+      <layout class="QHBoxLayout" name="headerHLayout">
+       <item>
+        <widget class="QLabel" name="lblTitle">
+         <property name="text">
+          <string>🚜 CONNECTED LIFTTRACK  |  CENTRAL FLEET DISPATCHER</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 26px; font-weight: bold; color: #ffffff;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="headerSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblClock">
+         <property name="text">
+          <string>BUILDROOT LINUXFB (1080p IPS)</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 16px; font-weight: bold; color: #10b981;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <!-- Central Body: Cards & Tables -->
+    <item>
+     <layout class="QHBoxLayout" name="bodyHLayout">
+      <property name="spacing">
+       <number>15</number>
+      </property>
+
+      <!-- Left Panel: System & Gateways -->
+      <item>
+       <widget class="QGroupBox" name="grpSystem">
+        <property name="minimumSize">
+         <size>
+          <width>500</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="title">
+         <string>  Telemetry &amp; Hardware Status  </string>
+        </property>
+        <layout class="QVBoxLayout" name="sysVLayout">
+         <property name="spacing">
+          <number>12</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="lblMqtt">
+           <property name="text">
+            <string>📡 Mosquitto Broker:  ONLINE (Port 1883)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblModem">
+           <property name="text">
+            <string>📶 Cellular Modem:  A7670E CAT-1 [READY]</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblGnss">
+           <property name="text">
+            <string>🛰 GNSS Positioning:  Fix 3D (Satellites: 14)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblDb">
+           <property name="text">
+            <string>💾 Local Storage:  SQLite3 WAL Mode [ACTIVE]</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblTouchStatus">
+           <property name="text">
+            <string>👆 Touch Test:  Tap buttons below to test 10-point Touch</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #fbbf24; font-weight: bold;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="sysSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnTestTouch">
+           <property name="text">
+            <string>TEST CAPACITIVE TOUCH (Count: 0)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnEmergency">
+           <property name="text">
+            <string>EMERGENCY FLEET STOP</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+
+      <!-- Right Panel: Fleet Grid -->
+      <item>
+       <widget class="QGroupBox" name="grpFleet">
+        <property name="title">
+         <string>  Active Fleet Units (60 Forklifts)  </string>
+        </property>
+        <layout class="QVBoxLayout" name="fleetVLayout">
+         <item>
+          <widget class="QTableWidget" name="tblFleet">
+           <property name="columnCount">
+            <number>5</number>
+           </property>
+           <column>
+            <property name="text">
+             <string>Unit ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Zone / Location</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Battery</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Status</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Signal (CSQ)</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

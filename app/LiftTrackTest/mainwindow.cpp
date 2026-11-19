@@ -14,8 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tblFleet->verticalHeader()->setDefaultSectionSize(45); // ارتفاع ردیف مناسب لمس
     ui->tblFleet->setRowCount(8);
 
-    QStringList units = {"FL-101", "FL-102", "FL-103", "FL-104", "FL-105", "FL-106", "FL-107", "FL-108"};
-    QStringList zones = {"Warehouse A", "Dock 3", "Paint Shop", "Assembly Line", "E-Coating Bay", "Dock 1", "Yard B", "Cold Store"};
+    QStringList units = {"DEMO-01", "DEMO-02", "DEMO-03", "DEMO-04", "DEMO-05", "DEMO-06", "DEMO-07", "DEMO-08"};
+    QStringList zones = {"Zone A", "Zone B", "Zone C", "Zone D", "Zone E", "Zone F", "Zone G", "Zone H"};
     QStringList bats  = {"94%", "78%", "82%", "45%", "99%", "63%", "31%", "88%"};
     QStringList states = {"Active", "Active", "Charging", "Active", "Active", "Idle", "Warning", "Active"};
     QStringList csqs   = {"-65 dBm", "-70 dBm", "-62 dBm", "-80 dBm", "-59 dBm", "-72 dBm", "-85 dBm", "-68 dBm"};
@@ -28,16 +28,16 @@ MainWindow::MainWindow(QWidget *parent)
         ui->tblFleet->setItem(i, 4, new QTableWidgetItem(csqs[i]));
     }
 
-    // متغیر شمارنده تست لمس
+    // Demo-only interaction counter; this is not a hardware multi-touch test.
     static int touchCount = 0;
     connect(ui->btnTestTouch, &QPushButton::clicked, this, [this]() {
         touchCount++;
-        ui->btnTestTouch->setText(QString("TOUCH DETECTED! Count: %1").arg(touchCount));
-        ui->lblTouchStatus->setText(QString("✅ Capacitive Touch Event #%1 Registered!").arg(touchCount));
+        ui->btnTestTouch->setText(QString("DEMO INTERACTION (Count: %1)").arg(touchCount));
+        ui->lblTouchStatus->setText(QString("Demo UI interaction #%1; no hardware test is performed.").arg(touchCount));
     });
 
     connect(ui->btnEmergency, &QPushButton::clicked, this, [this]() {
-        ui->lblTouchStatus->setText("⚠️ FLEET HALT BROADCAST SENT VIA MQTT!");
+        ui->lblTouchStatus->setText("DEMO ONLY: no MQTT command was sent and no vehicle was stopped.");
     });
 }
 

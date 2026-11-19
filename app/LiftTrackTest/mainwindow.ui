@@ -110,7 +110,7 @@ QHeaderView::section {
        <item>
         <widget class="QLabel" name="lblTitle">
          <property name="text">
-          <string>🚜 CONNECTED LIFTTRACK  |  CENTRAL FLEET DISPATCHER</string>
+          <string>CONNECTED LIFTTRACK | DEMO UI — SIMULATED DATA</string>
          </property>
          <property name="styleSheet">
           <string notr="true">font-size: 26px; font-weight: bold; color: #ffffff;</string>
@@ -133,7 +133,7 @@ QHeaderView::section {
        <item>
         <widget class="QLabel" name="lblClock">
          <property name="text">
-          <string>BUILDROOT LINUXFB (1080p IPS)</string>
+          <string>Qt linuxfb target UI (display details not verified here)</string>
          </property>
          <property name="styleSheet">
           <string notr="true">font-size: 16px; font-weight: bold; color: #10b981;</string>
@@ -161,7 +161,7 @@ QHeaderView::section {
          </size>
         </property>
         <property name="title">
-         <string>  Telemetry &amp; Hardware Status  </string>
+         <string>  Demo Telemetry — Sample Data Only  </string>
         </property>
         <layout class="QVBoxLayout" name="sysVLayout">
          <property name="spacing">
@@ -170,35 +170,35 @@ QHeaderView::section {
          <item>
           <widget class="QLabel" name="lblMqtt">
            <property name="text">
-            <string>📡 Mosquitto Broker:  ONLINE (Port 1883)</string>
+            <string>📡 Mosquitto Broker: sample status (not connected)</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="lblModem">
            <property name="text">
-            <string>📶 Cellular Modem:  A7670E CAT-1 [READY]</string>
+            <string>📶 Cellular Modem: sample data only (not connected)</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="lblGnss">
            <property name="text">
-            <string>🛰 GNSS Positioning:  Fix 3D (Satellites: 14)</string>
+            <string>🛰 GNSS: sample data only (no live fix)</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="lblDb">
            <property name="text">
-            <string>💾 Local Storage:  SQLite3 WAL Mode [ACTIVE]</string>
+            <string>💾 SQLite: package enabled in image config; no app connection</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="lblTouchStatus">
            <property name="text">
-            <string>👆 Touch Test:  Tap buttons below to test 10-point Touch</string>
+            <string>UI interaction counter only; not a 10-point touch test</string>
            </property>
            <property name="styleSheet">
             <string notr="true">color: #fbbf24; font-weight: bold;</string>
@@ -221,14 +221,14 @@ QHeaderView::section {
          <item>
           <widget class="QPushButton" name="btnTestTouch">
            <property name="text">
-            <string>TEST CAPACITIVE TOUCH (Count: 0)</string>
+            <string>TEST UI INTERACTION (Count: 0)</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="btnEmergency">
            <property name="text">
-            <string>EMERGENCY FLEET STOP</string>
+            <string>SIMULATE EMERGENCY STOP (DEMO ONLY)</string>
            </property>
           </widget>
          </item>
@@ -240,7 +240,7 @@ QHeaderView::section {
       <item>
        <widget class="QGroupBox" name="grpFleet">
         <property name="title">
-         <string>  Active Fleet Units (60 Forklifts)  </string>
+         <string>  Demo Fleet Units (8 Sample Rows)  </string>
         </property>
         <layout class="QVBoxLayout" name="fleetVLayout">
          <item>
